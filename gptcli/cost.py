@@ -38,10 +38,10 @@ class PriceChatListener(ChatListener):
 
         self.current_spend += cost
         self.logger.info(f"Token usage {num_tokens}")
-        self.logger.info(f"Message price (model: {model}): ${cost:.3f}")
-        self.logger.info(f"Current spend: ${self.current_spend:.3f}")
+        self.logger.info(f"Message price (model: {model}): {cost:.3f} ₽")
+        self.logger.info(f"Current spend: {self.current_spend:.3f} ₽")
         self.console.print(
-            f"Tokens: {num_tokens} | Price: ${cost:.3f} | Total: ${self.current_spend:.3f}",
+            f"Tokens: {num_tokens} | Price: {cost:.3f} ₽ | Total: {self.current_spend:.3f} ₽",
             justify="right",
             style="dim",
         )
