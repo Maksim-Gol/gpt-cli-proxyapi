@@ -39,6 +39,7 @@ class OpenAICompletionProvider(CompletionProvider):
                     messages=cast(List[ChatCompletionMessageParam], messages),
                     stream=True,
                     model=model,
+                    max_tokens=2000,
                     stream_options={"include_usage": True},
                     **kwargs,
                 )
@@ -62,6 +63,7 @@ class OpenAICompletionProvider(CompletionProvider):
                 response = self.client.chat.completions.create(
                     messages=cast(List[ChatCompletionMessageParam], messages),
                     model=model,
+                    max_tokens=2000,
                     stream=False,
                     **kwargs,
                 )
@@ -113,8 +115,8 @@ GPT_4_O_2024_05_13_PRICE_PER_TOKEN: Pricing = {
 }
 
 GPT_4_O_2024_08_06_PRICE_PER_TOKEN: Pricing = {
-    "prompt": 2.50 / 1_000_000,
-    "response": 10.0 / 1_000_000,
+    "prompt": 0.72 / 1_000,
+    "response": 2.88 / 1_000,
 }
 
 GPT_4_O_MINI_PRICE_PER_TOKEN: Pricing = {
